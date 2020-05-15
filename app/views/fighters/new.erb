@@ -1,0 +1,41 @@
+<form action="/fighters" method="post">
+
+  <label>Fighter Name</label>
+  <input type="text" name="fighter[name]">
+
+  <br />
+
+  <label>Fighter Discipline</label>
+  <input type="text" name="fighter[discipline]">
+
+  <br />
+
+
+  <label>Session Date</label>
+  <input type="text" name="session[date]">
+
+  <br />
+
+
+  <label>Chose a gym</label>
+  <select name="fighter[gym_id]">
+    <option disabled selected value> -- Select a Gym -- </option>
+    <% @gyms.each do |gym| %>
+      <option value="<%= gym.id %>"><%= gym.name %></option>
+    <% end %>
+  </select>
+
+  <br />
+
+
+  <label>Create a gym<label>
+  <br/>
+  <label>Type gym name</label>
+  <input type="text" name="gym[name]" />
+  <label>Type gym address</label>
+  <input type="text" name="gym[address]" />
+  
+  <br />
+
+  <input type="submit" value="Create fighter"/>
+</form>

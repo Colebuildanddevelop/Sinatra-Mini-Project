@@ -1,0 +1,26 @@
+<h3>Gym Name: <%= @gym.name %></h3>
+<h3>Gym Address: <%= @gym.address %></h3>
+
+<h4>Gym's Fighters</h4>
+<% @gym.fighters.each do |fighter| %>
+  <a href="/fighters/<%= fighter.id %>">
+    <li><%= fighter.name %></li>
+  </a>
+<% end %> 
+<br/>
+<h4>Gym's sessions</h4>
+<% @gym.sessions.each do |session| %>
+  <a href="/sessions/<%= session.id %>">
+    <li><%= session.date %></li>
+  </a>
+<% end %> 
+<br/>
+<a href="/gyms/<%= @gym.id %>/edit">Edit Gym</a> 
+
+<br />
+
+<form action="/gyms/<%= @gym.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete this gym" />
+
+</form>

@@ -1,0 +1,10 @@
+<h4> List of Fighters </h4>
+<ul>
+<%@fighters.each do |fighter| %>
+<a href="/fighters/<%= fighter.id %>">
+    <li><%= fighter.name %></li>
+    </a>
+<%end%>
+</ul>
+
+<a href="/fighters/new">Create a fighter</a>

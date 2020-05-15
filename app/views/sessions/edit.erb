@@ -1,0 +1,32 @@
+<form action="/sessions/<%= @session.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+
+  <label>Session Date</label>
+  <input type="text" name="session[date]" value="<%= @session.date %>">
+
+  <label>Gym</label>
+  <select name="session[gym_id]">
+    <% @gyms.each do |gym| %>
+      <% if @session.gym == gym %>
+        <option value="<%= gym.id %>" selected><%= gym.name %></option>
+      <% else %>
+        <option value="<%= gym.id %>"><%= gym.name %></option>
+      <% end %>
+    <% end %>
+  </select>
+
+  <label>Fighter</label>
+  <select name="session[fighter_id]">
+    <% @fighters.each do |fighter| %>
+      <% if @session.fighter == fighter %>
+        <option value="<%= fighter.id %>" selected><%= fighter.name %></option>
+      <% else %>
+        <option value="<%= fighter.id %>"><%= fighter.name %></option>
+      <% end %>
+    <% end %>
+  </select>
+
+
+  <input type="submit" value="Edit Session"/>
+</form>
+

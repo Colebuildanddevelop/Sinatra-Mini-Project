@@ -1,0 +1,25 @@
+<h3><%= @fighter.name %></h3>
+<h3>Fighter Discipline: <%= @fighter.discipline %></h3>
+
+<h4>Fighter's Gyms</h4>
+<% @fighter.gyms.each do |gym| %>
+  <a href="/gyms/<%= gym.id %>">
+    <li><%= gym.name %></li>
+  </a>
+<% end %> 
+<br/>
+<h4>Fighter's sessions</h4>
+<% @fighter.sessions.each do |session| %>
+  <a href="/sessions/<%= session.id %>">
+    <li><%= session.date %></li>
+  </a>
+<% end %> 
+<br/>
+<a href="/fighters/<%= @fighter.id %>/edit">Edit Fighter</a> 
+
+<br />
+
+<form action="/fighters/<%= @fighter.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete this fighter" />
+</form>

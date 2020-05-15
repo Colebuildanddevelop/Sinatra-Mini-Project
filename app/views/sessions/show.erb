@@ -1,0 +1,12 @@
+<h3>Session Date: <%= @session.date %></h3>
+<a href="/fighters/<%= @session.fighter.id %>"><h4>Session Fighter: <%= @session.fighter.name %></h4></a>
+<a href="/gyms/<%= @session.gym.id %>"><h4>Session Gym: <%= @session.gym.name %></h4></a>
+
+<a href="/sessions/<%= @session.id %>/edit">Edit Session</a> 
+
+<br />
+
+<form action="/sessions/<%= @session.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete this session" />
+</form>

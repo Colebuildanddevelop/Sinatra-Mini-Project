@@ -1,0 +1,23 @@
+<form action="/sessions" method="post">
+
+  <label>Chose a date</label>
+  <input type="text" name="session[date]">
+
+  <label>Chose a gym</label>
+  <select name="session[gym_id]">
+    <option disabled selected value> -- Select a Gym -- </option>
+    <% @gyms.each do |gym| %>
+      <option value="<%= gym.id %>"><%= gym.name %></option>
+    <% end %>
+  </select>
+
+  <label>Chose a fighter</label>
+  <select name="session[fighter_id]">
+    <option disabled selected value> -- Select a Fighter -- </option>
+    <% @fighters.each do |fighter| %>
+      <option value="<%= fighter.id %>"><%= fighter.name %></option>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Create session"/>
+</form>
