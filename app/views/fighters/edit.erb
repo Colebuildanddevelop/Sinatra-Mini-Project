@@ -1,11 +1,13 @@
+<nav><a href="/">Home</a>|<a href="/sessions">Sessions</a>|<a href="/fighters">Fighters</a>|<a href="/gyms">Gyms</a></nav> 
+
 <form action="/fighters/<%= @fighter.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
 
   <label>Fighter Name</label>
-  <input type="text" name="fighter[name]" value=<%= @fighter.name %>>
+  <input type="text" name="fighter[name]" value="<%= @fighter.name %>">
 
   <label>Fighter Discipline</label>
-  <input type="text" name="fighter[discipline]" value=<%= @fighter.name %>>
+  <input type="text" name="fighter[discipline]" value="<%= @fighter.discipline %>">
 
   <input type="submit" value="edit fighter"/>
 </form>

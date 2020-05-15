@@ -1,4 +1,6 @@
-<h4> List of Sessions </h4>
+<nav><a href="/">Home</a>|<a href="/sessions">Sessions</a>|<a href="/fighters">Fighters</a>|<a href="/gyms">Gyms</a></nav> 
+
+<h4> Sessions for every fighter and gym! </h4>
 <ul>
 <%@sessions.each do |session| %>
     <a href="/sessions/<%= session.id %>">
